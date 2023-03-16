@@ -1,3 +1,11 @@
 import './style.css';
 
-document.querySelector<HTMLDivElement>('#app');
+// document.getElementById('ex_1_1')!.addEventListener('click', () => {});
+
+document
+  .querySelectorAll<HTMLLIElement>('#excersise')
+  .forEach((element: HTMLLIElement) => {
+    element.addEventListener('click', () => {
+      import(`./${element.dataset.src}?version=${Number(new Date())}`);
+    });
+  });

@@ -1,5 +1,7 @@
 import p5, { Vector } from 'p5';
 
+document.getElementById('excersise')!.innerHTML = '';
+
 let sketch = (p: p5) => {
   let location: Vector;
   let velocity: Vector;
