@@ -1,7 +1,5 @@
 import p5 from 'p5';
 
-document.getElementById('excersise')!.innerHTML = '';
-
 let sketch = (p: p5) => {
   let x = 100;
   let y = 100;
@@ -34,4 +32,4 @@ let sketch = (p: p5) => {
   };
 };
 
-new p5(sketch, document.getElementById('excersise')!);
+new p5(sketch, document.getElementById('excersise-canvas')!);
