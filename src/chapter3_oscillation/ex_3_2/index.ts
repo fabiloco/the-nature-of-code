@@ -4,13 +4,14 @@ import { Mover } from './Mover';
 let sketch = (p: p5) => {
   let movers: Array<Mover>;
 
+  let cannonAngle = 0;
+  let cannonForceMagnitude = 10;
+
   p.setup = () => {
     p.createCanvas(640, 360);
     p.background(255);
 
     movers = new Array();
-
-    for (let i = 0; i < 20; i++) {}
   };
 
   p.draw = () => {
@@ -20,9 +21,18 @@ let sketch = (p: p5) => {
       const newMover = new Mover(p, 1, 0, p.height / 2);
       movers.push(newMover);
 
-      let cannonForce = new Vector(10, 0);
+      let force = Vector.fromAngle((cannonAngle * Math.PI) / 180);
+      force.mult(cannonForceMagnitude);
 
-      newMover.applyForce(cannonForce);
+      newMover.applyForce(force);
+    }
+
+    if (p.keyIsDown(65)) {
+      cannonAngle += 1;
+    }
+
+    if (p.keyIsDown(68)) {
+      cannonAngle -= 1;
     }
 
     for (const mover of movers) {
@@ -34,7 +44,11 @@ let sketch = (p: p5) => {
     p.rectMode(p.CENTER);
     p.stroke(0);
     p.fill(175);
-    p.rect(0, p.height / 2, 128, 32);
+    p.push();
+    p.translate(0, p.height / 2);
+    p.rotate((cannonAngle * Math.PI) / 180);
+    p.rect(0, 0, 128, 32);
+    p.pop();
   };
 };
 
