@@ -8,8 +8,16 @@ let sketch = (p: p5) => {
     p.createCanvas(640, 360);
     p.background(255);
 
-    for (let i = 0; i < oscillators.length; i++) {
-      oscillators[i] = new Oscillator(p);
+    let legsBySide = 5;
+
+    for (let index = 0; index < legsBySide; index++) {
+      let leftLeg = new Oscillator(p, false);
+      oscillators.push(leftLeg);
+    }
+
+    for (let index = 0; index < legsBySide; index++) {
+      let rightLeg = new Oscillator(p, true);
+      oscillators.push(rightLeg);
     }
   };
 

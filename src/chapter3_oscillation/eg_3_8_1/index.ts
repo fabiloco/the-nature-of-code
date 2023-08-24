@@ -16,11 +16,10 @@ let sketch = (p: p5) => {
     p.stroke(0);
     p.fill(115);
 
-    for (let i = 0; i <= p.width; i += 24) {
+    for (let x = 0; x <= p.width; x += 24) {
       let y = amplitude * p.sin(angle);
 
-      p.ellipse(i, y + p.height / 2, 48, 48);
-
+      p.ellipse(x, y + p.height / 2, 48, 48);
       angle += angleVel;
     }
   };
