@@ -1,10 +1,13 @@
 import p5, { Vector } from 'p5';
-import { Pendulum } from './Pendulum';
+import { Box } from './Box';
 
 let sketch = (p: p5) => {
-  let pendulum1 = new Pendulum(p, new Vector(320, 10), 125);
-  let pendulum2 = new Pendulum(p, pendulum1.getLocation(), 90);
-  let pendulum3 = new Pendulum(p, pendulum1.getLocation(), 50);
+  const adj = 640;
+  const opp = 360 - 100;
+
+  const angle = p.atan(adj / opp);
+
+  const box = new Box(p, new Vector(640, 80), angle);
 
   p.setup = () => {
     p.createCanvas(640, 360);
@@ -16,12 +19,8 @@ let sketch = (p: p5) => {
     p.stroke(0);
     p.fill(0, 50);
 
-    pendulum1.go();
-    pendulum2.go();
-    pendulum3.go();
-
-    pendulum2.setOrigin(pendulum1.getLocation());
-    pendulum3.setOrigin(pendulum2.getLocation());
+    p.line(640, 100, 0, 360);
+    box.go();
   };
 };
 

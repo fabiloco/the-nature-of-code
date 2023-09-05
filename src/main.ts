@@ -8,5 +8,6 @@ document
     element.addEventListener('click', () => {
       document.getElementById('excersise-canvas')!.innerHTML = '';
       import(`./${element.dataset.src}?version=${Number(new Date())}`);
+      document.getElementById('title')?.scrollIntoView();
     });
   });
