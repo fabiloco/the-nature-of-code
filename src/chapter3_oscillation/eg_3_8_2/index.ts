@@ -3,7 +3,7 @@ import p5 from 'p5';
 let sketch = (p: p5) => {
   let angle = 0;
   let angleVel = 0.2;
-  let amplitude = 100;
+  // let amplitude = 100;
 
   p.setup = () => {
     p.createCanvas(640, 360);

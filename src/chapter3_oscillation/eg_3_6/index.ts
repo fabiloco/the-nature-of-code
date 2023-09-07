@@ -1,7 +1,7 @@
 import p5 from 'p5';
 
 let sketch = (p: p5) => {
-  let period = 120;
+  // let period = 120;
   let amplitude = 100;
 
   let angle = 0;

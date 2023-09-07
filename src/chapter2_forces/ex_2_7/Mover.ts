@@ -1,5 +1,4 @@
 import p5, { Vector } from 'p5';
-import { Liquid } from './Liquid';
 
 export class Mover {
   p: p5;
@@ -62,7 +61,7 @@ export class Mover {
       this.location.x,
       this.location.y,
       16 * this.mass,
-      16 * this.mass
+      16 * this.mass,
     );
   }
 

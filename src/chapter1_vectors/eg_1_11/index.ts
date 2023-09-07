@@ -1,4 +1,4 @@
-import p5, { Vector } from 'p5';
+import p5 from 'p5';
 import { Mover } from './Mover';
 
 let sketch = (p: p5) => {
