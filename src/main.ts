@@ -1,5 +1,7 @@
 import './style.css';
 
+import './test.js';
+
 // document.getElementById('ex_1_1')!.addEventListener('click', () => {});
 
 window.addEventListener('load', () => {
@@ -15,6 +17,8 @@ document
   .forEach((element: HTMLLIElement) => {
     element.addEventListener('click', () => {
       document.getElementById('excersise-canvas')!.innerHTML = '';
+
+      // @ts-ignore
       import(`./${element.dataset.src}?version=${Number(new Date())}`);
       document.getElementById('title')?.scrollIntoView();
 
