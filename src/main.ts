@@ -1,7 +1,5 @@
 import './style.css';
 
-import './test.js';
-
 // document.getElementById('ex_1_1')!.addEventListener('click', () => {});
 
 window.addEventListener('load', () => {
